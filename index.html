@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支持者 | 感谢您的支持</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 配置Tailwind自定义样式 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#4080FF',
+            accent: '#00B42A',
+            dark: '#1E1E1E',
+            light: '#F5F7FA'
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .transition-custom {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hover-lift {
+        @apply transition-custom hover:-translate-y-1 hover:shadow-lg;
+      }
+      .name-link {
+        @apply relative inline-block overflow-hidden hover:text-primary transition-custom;
+      }
+      .name-link::after {
+        content: '';
+        @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-custom;
+      }
+      .name-link:hover::after {
+        @apply w-full;
+      }
+    }
+  </style>
+  <style>
+    /* 导入字体 */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    /* 基础动画 */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+    .delay-500 { animation-delay: 500ms; }
+  </style>
+</head>
+<body class="font-inter bg-light text-dark min-h-screen flex flex-col">
+  <!-- 页面容器 -->
+  <div class="container mx-auto px-4 py-8 md:py-16 flex-grow">
+    <!-- 标题区域 -->
+    <header class="text-center mb-12 md:mb-16 animate-fadeInUp">
+      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-primary mb-4 text-shadow">
+        支持者
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        感谢以下支持者对项目的大力支持！
+      </p>
+    </header>
+    
+    <!-- 跳转按钮区域 -->
+    <div class="text-center mb-16 animate-fadeInUp delay-100">
+      <a href="https://waterchisato.github.io/home" target="_blank" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-medium rounded-lg shadow-lg hover-lift">
+        <i class="fa fa-arrow-right mr-2"></i>
+        前往主页
+        <i class="fa fa-external-link ml-2"></i>
+      </a>
+    </div>
+    
+    <!-- 支持者展示区域 -->
+    <section class="max-w-4xl mx-auto">
+      <!-- 支持者标题 -->
+      <div class="text-center mb-10 animate-fadeInUp delay-200">
+        <h2 class="text-2xl md:text-3xl font-semibold text-dark mb-3">
+          我们的支持者
+        </h2>
+        <div class="w-20 h-1 bg-primary mx-auto"></div>
+      </div>
+      
+      <!-- 支持者列表 - 响应式布局 -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
+        <!-- 支持者1 - 点击跳转到个人网页 -->
+        <div class="text-center animate-fadeInUp delay-300">
+          <a href="https://b23.tv/PETsxcZ" target="_blank" class="name-link text-2xl font-medium">
+            Jerry嘉铭080
+          </a>
+        </div>
+        
+        <!-- 支持者2 - 点击跳转到个人网页 -->
+        <div class="text-center animate-fadeInUp delay-350">
+          <a href="https://b23.tv/n4iZN3z" target="_blank" class="name-link text-2xl font-medium">
+            水喝千束
+          </a>
+        </div>
+        
+        <!-- 支持者3 - 点击跳转到个人网页 -->
+        <div class="text-center animate-fadeInUp delay-400">
+          <a href="https://b23.tv/FBHSiWf" target="_blank" class="name-link text-2xl font-medium">
+            Jony-Ma
+          </a>
+        </div>
+        
+        <!-- 支持者4 - 点击跳转到个人网页 -->
+        <div class="text-center animate-fadeInUp delay-450">
+          <a href="https://b23.tv/N4ng7jF" target="_blank" class="name-link text-2xl font-medium">
+           基沃托斯 联邦综合
+          </a>
+        </div>
+        
+        <!-- 支持者5 - 点击跳转到个人网页 -->
+        <div class="text-center animate-fadeInUp delay-500">
+          <a href="" target="_blank" class="name-link text-2xl font-medium">
+            无用
+          </a>
+        </div>
+      </div>
+      
+      <!-- 下方可添加支持者介绍（如需），但点击跳转功能已在上方实现 -->
+      <div class="mt-16 text-center">
+        <p class="text-gray-600">点击支持者名字可查看他们的网页 ⬆️</p>
+      </div>
+    </section>
+  </div>
+  
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4">感谢所有支持者的慷慨支持 | &copy; 2025 水喝千束 网页开发团队</p>
+      <div class="flex justify-center space-x-4">
+        <a href="#" class="text-gray-400 hover:text-white transition-custom"><i class="fa fa-github text-xl"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white transition-custom"><i class="fa fa-twitter text-xl"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white transition-custom"><i class="fa fa-email text-xl"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 按钮点击效果
+    const buttons = document.querySelectorAll('button, a[class*="bg-"], a[class*="hover-lift"]');
+    buttons.forEach(button => {
+      button.addEventListener('mousedown', () => {
+        button.classList.add('scale-95');
+      });
+      button.addEventListener('mouseup', () => {
+        button.classList.remove('scale-95');
+      });
+      button.addEventListener('mouseleave', () => {
+        button.classList.remove('scale-95');
+      });
+    });
+  </script>
+</body>
+</html>
